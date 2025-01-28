@@ -32,6 +32,10 @@ header {
   z-index: 10;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transition: background 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Empilhar logo e texto no cabeçalho */
 }
 
 /* Logo do Cabeçalho */
@@ -170,17 +174,36 @@ h2 {
 }
 
 @media (max-width: 768px) {
-  .card {
-    width: 100%; /* 1 card por linha */
+  /* Ajuste para o cabeçalho em telas pequenas */
+  header {
+    padding: 15px 0; /* Menos padding */
+    flex-direction: row; /* Alinhar logo e abas horizontalmente */
+    justify-content: space-between; /* Distribuir logo e abas */
+  }
+
+  header .logo {
+    font-size: 1.8em; /* Reduzir o tamanho da fonte do logo */
+    margin-bottom: 0; /* Remover margem inferior do logo */
   }
 
   .tabs {
     flex-direction: column; /* Abas empilhadas em telas pequenas */
+    width: 100%; /* Abas ocupam toda a largura */
   }
 
   .tablinks {
     width: 100%; /* Abas ocupando toda a largura */
     margin-bottom: 10px;
+    font-size: 1.1em; /* Ajuste no tamanho da fonte das abas */
+  }
+
+  .card-container {
+    padding: 10px; /* Menos padding nos cards em telas pequenas */
+  }
+
+  .card {
+    width: 100%; /* 1 card por linha */
+    margin: 10px 0; /* Margem entre os cards */
   }
 }
 
